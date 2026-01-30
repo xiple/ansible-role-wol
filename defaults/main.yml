@@ -1,4 +1,3 @@
 ---
 
 wol_ifname: enp1s0
-wol_paremeter_switch_manage: true
