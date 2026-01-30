@@ -13,7 +13,11 @@ None.
 Role Variables
 ----------------
 
-None.
+```yaml
+wol_ifname: enp1s0
+```
+
+The network interface on which to set up Wake-On-Lan paremeter.
 
 Supported distributions
 ----------------
