@@ -1,2 +1,8 @@
 ---
 # SPDX-License-Identifier: MIT-0
+
+- name: Install ethtool
+  ansible.builtin.apt:
+    name: ethtool
+    state: present
+    update_cache: true
