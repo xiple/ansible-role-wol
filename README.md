@@ -17,7 +17,7 @@ Role Variables
 wol_ifname: enp1s0
 ```
 
-The network interface on which to set up Wake-On-Lan paremeter.
+The network interface on which to set up Wake-On-Lan parameter.
 
 Supported distributions
 ----------------
