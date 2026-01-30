@@ -6,3 +6,7 @@
     name: ethtool
     state: present
     update_cache: true
+
+- name: Enable Wake on Lan
+  ansible.builtin.command: /sbin/ethtool -s {{ wol_ifname }} wol g
+  when: wol_paremeter_switch_manage | bool
