@@ -4,6 +4,11 @@
   gather_facts: true
 
   tasks:
-    - name: Verify
-      ansible.builtin.debug:
-        msg: Verify
+    - name: Gather the package facts
+      ansible.builtin.package_facts:
+        manager: auto
+
+    - name: Fail if ethtool package is not installed
+      ansible.builtin.fail:
+        msg: "ethtool package is not installed"
+      when: "'ethtool' not in ansible_facts.packages"
