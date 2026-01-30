@@ -1,0 +1,9 @@
+---
+- name: Verify
+  hosts: molecule
+  gather_facts: true
+
+  tasks:
+    - name: Verify
+      ansible.builtin.debug:
+        msg: Verify
