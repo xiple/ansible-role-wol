@@ -1,7 +1,7 @@
 Ansible role: Wol
 =========
 
-TODO CI
+[![CI](https://github.com/xiple/ansible-role-wol/actions/workflows/ci.yml/badge.svg)](https://github.com/xiple/ansible-role-wol/actions/workflows/ci.yml)
 
 An ansible role to setup Wake on Lan through ethtool.
 
