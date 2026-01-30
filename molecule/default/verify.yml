@@ -1,6 +1,7 @@
 ---
 - name: Verify
   hosts: molecule
+  vars_files: ../../vars/main.yml
   gather_facts: true
 
   tasks:
@@ -12,3 +13,13 @@
       ansible.builtin.fail:
         msg: "ethtool package is not installed"
       when: "'ethtool' not in ansible_facts.packages"
+
+    - name: Get information on wol systemd unit file
+      ansible.builtin.stat:
+        path: "{{ wol_systemd_unit_file_dst }}"
+      register: wol_systemd_unit_file
+
+    - name: Fail if wol systemd unit file does not exist
+      ansible.builtin.fail:
+        msg: "{{ wol_systemd_unit_file_dst }} file does not exist"
+      when: not wol_systemd_unit_file.stat.exists

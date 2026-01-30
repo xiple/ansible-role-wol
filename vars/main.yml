@@ -1,1 +1,3 @@
 ---
+
+wol_systemd_unit_file_dst: /etc/systemd/system/wol-enable.service
