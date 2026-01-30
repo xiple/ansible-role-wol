@@ -10,3 +10,17 @@
 - name: Enable Wake on Lan
   ansible.builtin.command: /sbin/ethtool -s {{ wol_ifname }} wol g
   when: wol_paremeter_switch_manage | bool
+
+- name: Install Wake-on-LAN systemd service
+  ansible.builtin.template:
+    src: wol-enable.service.j2
+    dest: "{{ wol_systemd_unit_file_dst }}"
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Systemd daemon-reload
+
+- name: Ensure Wake-on-Lan systemd service is enabled
+  ansible.builtin.systemd_service:
+    name: wol-enable.service
+    enabled: true
