@@ -1,4 +1,4 @@
 ---
 
-wol_ifname: wlp0s20f3
+wol_ifname: enp1s0
 wol_paremeter_switch_manage: true
